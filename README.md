@@ -4,7 +4,29 @@
 
 Randy Ardywibowo, Guang Zhao, Zhangyang Wang, Bobak Mortazavi, Shuai Huang, and Xiaoning Qian
 
-It is provided for educational/research purpose only. 
+# Usage
+
+## Train the Switching Gaussian Process model
+
+Train the switching GP model by running.
+
+`Methods/runPopMTGP.m`
+
+You can experiment with different kernels and training methods by running
+
+`Methods/runPopMTGP_joint_contexts.m`
+
+This runs the Baseline + Separate time dependence + Separate Multivariate model. The other file,
+
+`Methods/runPopMTGP_joint.m`
+
+runs the Baseline + Separate time dependence + Combined Multivariate model.
+
+## Prediction using the Switching Gaussian Process model
+
+To predict, run
+
+`PopMTGPpredict_popmtgp_all_tasks.m`
 
 # Citation
 Please consider citing our paper if you find the software useful for your work.

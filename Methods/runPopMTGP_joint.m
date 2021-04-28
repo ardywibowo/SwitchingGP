@@ -3,11 +3,6 @@ clear; close all; clc;
 
 addpath(genpath('../'));
 
-%% Things to try
-% 1. Averaging each context * subject instance individually
-% 2. Fit Gaussian Process baseline on all population
-% 3. 
-
 %% Info
 % 1 WALKING
 % 2 WALKING_UPSTAIRS
@@ -207,14 +202,12 @@ for i = 1 : length(context_train)
 end
 
 % Add prior and normalize
-% p_trans = p_trans + 50 * ones(num_contexts);
+p_trans = p_trans + 50 * ones(num_contexts);
 p_trans = p_trans ./ sum(p_trans);
 
 save('../Results/MTGP/hmm_model.mat', 'p_trans');
 
 clear i t transitions subject_context;
-
-% Remark: Transitions very biased and useless for real life.
 
 %% Train Gamma Process
 disp('Training Gamma Process');
@@ -390,62 +383,7 @@ abs_all = mean(differences_all(:));
 save('../Results/MTGP/errors.mat', 'mse_all', 'abs_all');
 save('../Results/MTGP/predictions.mat', 'Ypred_all', 'Vpred_all');
 
-
-% Predict with multiple steps
-
-
 toc;
-
-%% Matern Stuff
-
-% % Train each context separately
-% 
-% % Distance matrix
-% dist_train = cell(num_contexts, 1);
-% dist_test = cell(num_contexts, 1);
-% for j = 1 : num_contexts
-% 	dist_train{j} = {};
-% 	for i = 1 : length(time_train{j})
-% 		dist_train{j}{i} = squareform(pdist(time_train{j}{i}'));
-% 	end
-% 	
-% 	dist_test{j} = {};
-% 	for i = 1 : length(time_test{j})
-% 		dist_test{j}{i} = squareform(pdist(time_test{j}{i}'));
-% 	end
-% end
-
-% function ell = ell_matern(dist, x, range, nu, sigma_l)
-% 
-% cov_matern = matern_cov(dist, range, nu);
-% 
-% 
-% 
-% cov_all
-% 
-% sigma_c = chol(cov_matern, 'lower')';
-% 
-% out = sigma_c \ x;
-% 
-% quad_form = sum(out.^2);
-% det_part = 2 * sum(log(diag(sigma_c)));
-% 
-% ell = 0.5*det_part + 0.5*quad_form;
-% 
-% end
-
-function cov_mat = matern_cov(dist, range, nu)
-
-num_samples = length(dist);
-cov_m = cell(num_samples, 1);
-for i = 1 : num_samples
-	cov_m{i} = matern(dist{i}, range, nu);
-end
-cov_mat = spdiags(blkdiag(cov_m{:}));
-
-end
-
-
 
 
 
