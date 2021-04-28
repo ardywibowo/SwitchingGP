@@ -6,7 +6,7 @@ Randy Ardywibowo, Guang Zhao, Zhangyang Wang, Bobak Mortazavi, Shuai Huang, and 
 
 ## Overview
 
-We first propose a switching Gaussian process to model the observed sensor signals emitting
+We propose a switching Gaussian process to model the observed sensor signals emitting
 from the underlying activity states. To efficiently compute the Gaussian process model
 likelihood and quantify the context prediction uncertainty, we propose a block circulant
 embedding technique and use Fast Fourier
