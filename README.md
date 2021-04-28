@@ -4,13 +4,14 @@
 
 Randy Ardywibowo, Guang Zhao, Zhangyang Wang, Bobak Mortazavi, Shuai Huang, and Xiaoning Qian
 
+
+
+<img src="./Figures/semimarkov.png" alt="The Hidden Semi-Markov Model" width="60%"/><img src="./Figures/gampdf.png" alt="The Gamma Hidden State Duration Distribution" width="39%"/></br>
+
 <p align="center">
   <img src="Figures/fullfull.png" alt="full prediction"/></br>
   <span align="center">Our predictions on the UCI HAR dataset</span>
 </p>
-
-<img src="./Figures/semimarkov.png" alt="The Hidden Semi-Markov Model" width="60%"/><img src="./Figures/gampdf.png" alt="The Gamma Hidden State Duration Distribution" width="39%"/></br>
-
 
 ## Usage
 
