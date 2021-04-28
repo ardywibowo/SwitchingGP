@@ -4,31 +4,41 @@
 
 Randy Ardywibowo, Guang Zhao, Zhangyang Wang, Bobak Mortazavi, Shuai Huang, and Xiaoning Qian
 
-# Usage
+<p align="center">
+  <img src="Figures/fullfull.png" alt="full prediction"/></br>
+  <span align="center">Our predictions on the UCI HAR dataset</span>
+</p>
 
-## Train the Switching Gaussian Process model
+<p float="left">
+  <img src="./Figures/gampdf.png" alt="duration distribution" width="32%"/></br>
+  <img src="./Figures/semimarkov.png" alt="duration distribution" width="32%"/></br>
+</p>
 
-Train the switching GP model by running.
+## Usage
 
-`Methods/runPopMTGP.m`
+### Train the Switching Gaussian Process model
 
-You can experiment with different kernels and training methods by running
+Train the switching GP model by running 
 
-`Methods/runPopMTGP_joint_contexts.m`
+```Methods/runPopMTGP.m```
+
+You can experiment with different kernels and training methods by running 
+
+```Methods/runPopMTGP_joint_contexts.m```
 
 This runs the Baseline + Separate time dependence + Separate Multivariate model. The other file,
 
-`Methods/runPopMTGP_joint.m`
+```Methods/runPopMTGP_joint.m```
 
 runs the Baseline + Separate time dependence + Combined Multivariate model.
 
-## Prediction using the Switching Gaussian Process model
+### Prediction using the Switching Gaussian Process model
 
 To predict, run
 
-`PopMTGPpredict_popmtgp_all_tasks.m`
+```PopMTGPpredict_popmtgp_all_tasks.m```
 
-# Citation
+## Citation
 Please consider citing our paper if you find the software useful for your work.
 
 ```
